@@ -556,48 +556,48 @@ def main():
         logging.info('[Config] Automatic config backup is disabled')
         set_backup_enabled(False)
 
-    # 1 Initial Setup
-    disable_unused_filesystems()
-    if not args.disable_mount_options:
-        set_mount_options()
-    ensure_sticky_bit()
-    disable_automounting()
-    enable_aide()
-    secure_boot_settings()
-    apply_process_hardenings()
-    configure_warning_banners()
-    ensure_updated()
+    # # 1 Initial Setup
+    # disable_unused_filesystems()
+    # if not args.disable_mount_options:
+    #     set_mount_options()
+    # ensure_sticky_bit()
+    # disable_automounting()
+    # enable_aide()
+    # secure_boot_settings()
+    # apply_process_hardenings()
+    # configure_warning_banners()
+    # ensure_updated()
 
-    # 2 Services
-    disable_inetd_services()
-    configure_time_synchronization(args.time, chrony=args.chrony)
-    remove_x11_packages()
-    disable_special_services()
-    configure_mta()
-    remove_insecure_clients()
+    # # 2 Services
+    # disable_inetd_services()
+    # configure_time_synchronization(args.time, chrony=args.chrony)
+    # remove_x11_packages()
+    # disable_special_services()
+    # configure_mta()
+    # remove_insecure_clients()
 
     # 3 Network Configuration
-    configure_host_network_params()
-    configure_network_params()
-    configure_ipv6_params()
-    if not args.disable_tcp_wrappers:
-        configure_tcp_wrappers(args.clients)
-    disable_uncommon_protocols()
-    if not args.disable_iptables:
-        configure_iptables()
+    # configure_host_network_params()
+    # configure_network_params()
+    # configure_ipv6_params()
+    # if not args.disable_tcp_wrappers:
+    #     configure_tcp_wrappers(args.clients)
+    # disable_uncommon_protocols()
+    # if not args.disable_iptables:
+    #     configure_iptables()
 
-    # 4 Logging and Auditing
-    configure_rsyslog()
-    configure_log_file_permissions()
+    # # 4 Logging and Auditing
+    # configure_rsyslog()
+    # configure_log_file_permissions()
 
-    # 5 Access, Authentication and Authorization
-    configure_cron()
-    configure_sshd()
-    if not args.disable_pam:
-        configure_pam()
-    configure_password_parmas()
-    configure_umask()
-    configure_su()
+    # # 5 Access, Authentication and Authorization
+    # configure_cron()
+    # configure_sshd()
+    # if not args.disable_pam:
+    #     configure_pam()
+    # configure_password_parmas()
+    # configure_umask()
+    # configure_su()
 
 
 if __name__ == '__main__':
